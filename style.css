@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --ff-title: 'Staatliches', 'Palaquin';
+  --ff-text: 'Palanquin', 'Staatliches';
+
+  --fs-body: 1.6rem;
+  --fs-title: 4rem;
+  --fs-text: 2rem;
+
+  --fc-title: hsla(0, 0%, 100%, 1);
+  --fc-buttom: hsla(232, 17%, 35%, 1);
+  --fc-text: hsla(274, 84%, 12%, 1);
+
+  --bc-title: hsla(275, 18%, 79%, 1);
+  --bc-buttom: hsla(312, 91%, 96%, 1);
+  --bc-body: hsla(233, 100%, 97%, 1);
+  --bc-body-bef: hsla(218, 17%, 62%, 1);
+}
+
+body::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background: var(--bc-body-bef);
+
+  width: 100%;
+  height: 27.9rem;
+}
+
+body {
+  font-size: var(--fs-body);
+
+  font-family: var(--ff-title);
+
+  background: var(--bc-body);
+}
+
+img {
+  width: 100%;
+}
+
+.page {
+  max-width: 38.4rem;
+
+  margin: 0 auto;
+}
+
+header {
+  margin: 3.2rem 0 2.5rem;
+
+  text-align: center;
+}
+
+header img {
+  width: 13.7rem;
+  height: 13.7rem;
+}
+
+header h1 {
+  font-weight: 400;
+  font-size: var(--fs-title);
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: var(--fc-title);
+
+  background: var(--bc-title);
+  width: 38.4rem;
+  height: 4.9rem;
+
+  padding: 0.8rem 8.7rem 0.7rem;
+  margin: 3.2rem 0 0;
+
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+main {
+  margin: 0 3.2rem 6rem;
+}
+
+main p {
+  font-family: var(--ff-text);
+  font-weight: 400;
+  font-size: var(--fs-text);
+  line-height: 1.5rem;
+
+  color: var(--fc-text);
+
+  text-align: center;
+
+  margin: 4.3rem 0 6.3rem;
+}
+
+.container {
+  display: grid;
+  gap: 3.6rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  border-radius: 2.0rem;
+
+  filter: brightness(1.2);
+
+  transition: all 300ms;
+
+  animation: downtop 700ms backwards;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+}
+
+.card h2 {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  background: var(--bc-buttom);
+  border-radius: 2rem;
+
+  width: fit-content;
+  height: 3.2rem;
+
+  padding: 0 2.3rem;
+
+  display: grid;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: var(--fs-text);
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: var(--fc-buttom);
+
+  animation: topdown 900ms;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
